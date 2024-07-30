@@ -77,6 +77,8 @@ class ExperienceController
      */
     public function destroy(Experience $experience)
     {
-        //
+        $experience->delete();
+
+        return Redirect::route('admin');
     }
 }

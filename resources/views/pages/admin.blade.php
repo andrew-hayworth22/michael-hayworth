@@ -1,7 +1,7 @@
 @props([
     "experiences"
 ])
-<x-app-layout>
+<x-app-layout xmlns="http://www.w3.org/1999/html">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-2">Administration</h1>
@@ -12,6 +12,11 @@
                         @foreach($experiences as $experience)
                             <li>
                                 <a href="{{ route('experiences.edit', $experience['id']) }}">{{ $experience->order . '. ' . $experience->title }}</a>
+                                <form action="{{ route('experiences.destroy', $experience['id']) }}" method="post" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" value="Delete"/>
+                                </form>
                             </li>
                         @endforeach
                     </ol>
