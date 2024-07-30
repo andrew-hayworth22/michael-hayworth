@@ -6,7 +6,8 @@
     <div class="sm:col-span-2 col-span-8 text-slate-400">{{ $experience["time_frame"] }}</div>
     <div class="sm:col-span-6 col-span-8">
         <div class="mb-5">
-            <h3 class="text-slate-200 text-xl font-semibold">{{ $experience["title"] }}</h3>
+            <h3 class="text-slate-200 text-xl font-semibold">
+                {{ $experience["title"] }} · {{ $experience["company"] }}           </h3>
             <div class="text-slate-400">{{ $experience["location"] }}</div>
             <div class="text-slate-400">{{ $experience["type"] }}</div>
         </div>

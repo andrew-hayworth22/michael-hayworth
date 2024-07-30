@@ -37,6 +37,8 @@ class ExperienceController
         $validated['order'] = $order;
 
         Experience::create($validated);
+
+        return Redirect::route('admin');
     }
 
     /**
@@ -52,7 +54,9 @@ class ExperienceController
      */
     public function edit(Experience $experience)
     {
-        //
+        return view("pages.update-experience", [
+            "experience" => $experience
+        ]);
     }
 
     /**

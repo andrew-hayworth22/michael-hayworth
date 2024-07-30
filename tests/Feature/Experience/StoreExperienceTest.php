@@ -26,7 +26,7 @@ it('users can create experiences', function() {
     $request = value($this->validData);
     $this->actingAs(User::factory()->create())
         ->post(route('experiences.store'), $request)
-        ->assertOk();
+        ->assertRedirect(route('admin'));
 
     $this->assertDatabaseHas("experiences", [
         ...$request,
@@ -40,7 +40,7 @@ it('new experience order is set correctly', function() {
     $request = value($this->validData);
     $this->actingAs(User::factory()->create())
         ->post(route('experiences.store'), $request)
-        ->assertOk();
+        ->assertRedirect(route('admin'));
 
     $this->assertDatabaseHas("experiences", [
         ...$request,
