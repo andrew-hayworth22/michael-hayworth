@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Experience;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreExperienceRequest extends FormRequest
+class UpdateExperienceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +22,7 @@ class StoreExperienceRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "order" => ["required", "integer", "min:1"],
             "title" => ["required", "string", "max:150"],
             "company" => ["required", "string", "max:150"],
             "company_url" => ["required", "string", "max:300"],

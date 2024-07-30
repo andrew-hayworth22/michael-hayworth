@@ -1,13 +1,13 @@
 <?php
 
-use App\Models\Experience;
+use App\Models\Education;
 use App\Models\User;
 
 beforeEach(function () {
     $this->validData = fn () => [
-        "title" => "Software Engineer",
-        "company" => "BAM Technologies LLC",
-        "company_url" => "https://bamtech.net",
+        "degree" => "BS Computer Science",
+        "school" => "Kent State University",
+        "school_url" => "https://kent.edu",
         "location" => "Remote",
         "type" => "Full-Time",
         "time_frame" => "May 2022 - Present",
@@ -16,33 +16,34 @@ beforeEach(function () {
     ];
 });
 
+
 it('requires authorization', function () {
     $request = value($this->validData);
-    $this->post(route('experiences.store'), $request)
+    $this->post(route('educations.store'), $request)
         ->assertRedirect(route('login'));
 });
 
-it('users can create experiences', function() {
+it('users can create educations', function() {
     $request = value($this->validData);
     $this->actingAs(User::factory()->create())
-        ->post(route('experiences.store'), $request)
+        ->post(route('educations.store'), $request)
         ->assertRedirect(route('admin'));
 
-    $this->assertDatabaseHas("experiences", [
+    $this->assertDatabaseHas("education", [
         ...$request,
         "order" => 1
     ]);
 });
 
-it('new experience order is set correctly', function() {
-    Experience::factory(4)->create();
+it('new educations order is set correctly', function() {
+    Education::factory(4)->create();
 
     $request = value($this->validData);
     $this->actingAs(User::factory()->create())
-        ->post(route('experiences.store'), $request)
+        ->post(route('educations.store'), $request)
         ->assertRedirect(route('admin'));
 
-    $this->assertDatabaseHas("experiences", [
+    $this->assertDatabaseHas("education", [
         ...$request,
         "order" => 5
     ]);
@@ -51,27 +52,27 @@ it('new experience order is set correctly', function() {
 it('requires valid data', function(array $badData, array|string $errors) {
     $request = value($this->validData);
     $this->actingAs(User::factory()->create())
-        ->post(route('experiences.store'), [
+        ->post(route('educations.store'), [
             ...$request,
             ...$badData,
         ])
         ->assertInvalid($errors);
 })->with([
-    [['title' => null], "title"],
-    [['title' => true], "title"],
-    [['title' => 1], "title"],
-    [['title' => 1.3], "title"],
-    [['title' => str_repeat('a', 151)], "title"],
-    [['company' => null], "company"],
-    [['company' => true], "company"],
-    [['company' => 1], "company"],
-    [['company' => 1.3], "company"],
-    [['company' => str_repeat('a', 151)], "company"],
-    [['company_url' => null], "company_url"],
-    [['company_url' => true], "company_url"],
-    [['company_url' => 1], "company_url"],
-    [['company_url' => 1.3], "company_url"],
-    [['company_url' => str_repeat('a', 301)], "company_url"],
+    [['degree' => null], "degree"],
+    [['degree' => true], "degree"],
+    [['degree' => 1], "degree"],
+    [['degree' => 1.3], "degree"],
+    [['degree' => str_repeat('a', 151)], "degree"],
+    [['school' => null], "school"],
+    [['school' => true], "school"],
+    [['school' => 1], "school"],
+    [['school' => 1.3], "school"],
+    [['school' => str_repeat('a', 151)], "school"],
+    [['school_url' => null], "school_url"],
+    [['school_url' => true], "school_url"],
+    [['school_url' => 1], "school_url"],
+    [['school_url' => 1.3], "school_url"],
+    [['school_url' => str_repeat('a', 301)], "school_url"],
     [['location' => null], "location"],
     [['location' => true], "location"],
     [['location' => 1], "location"],

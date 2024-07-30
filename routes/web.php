@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource("experiences", ExperienceController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('educations', EducationController::class)->only(['store']);
 });
 
 require __DIR__.'/auth.php';

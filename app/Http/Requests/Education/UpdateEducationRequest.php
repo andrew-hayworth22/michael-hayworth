@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Education;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateExperienceRequest extends FormRequest
+class UpdateEducationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,9 @@ class UpdateExperienceRequest extends FormRequest
     {
         return [
             "order" => ["required", "integer", "min:1"],
-            "title" => ["required", "string", "max:150"],
-            "company" => ["required", "string", "max:150"],
-            "company_url" => ["required", "string", "max:300"],
+            "degree" => ["required", "string", "max:150"],
+            "school" => ["required", "string", "max:150"],
+            "school_url" => ["required", "string", "max:300"],
             "location" => ["required", "string", "max:100"],
             "type" => ["required", "string", "max:50"],
             "time_frame" => ["required", "string", "max:50"],
