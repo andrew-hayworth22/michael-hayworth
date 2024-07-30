@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ExperienceResource;
 use App\Models\Experience;
 
 class HomeController
 {
     public function index()
     {
-        $experiences = Experience::all()
+        $experiences = Experience::orderBy('order')
+            ->get()
             ->map(function ($experience) {
                 $experience->bullet_points = explode("\r\n\r\n", $experience->bullet_points);
                 $experience->tags = explode(",", $experience->tags);

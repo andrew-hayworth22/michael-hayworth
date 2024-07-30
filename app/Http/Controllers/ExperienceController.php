@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreExperienceRequest;
+use App\Http\Requests\UpdateExperienceRequest;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
@@ -62,9 +63,13 @@ class ExperienceController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Experience $experience)
+    public function update(UpdateExperienceRequest $request, Experience $experience)
     {
-        //
+        $validated = $request->validated();
+
+        $experience->update($validated);
+
+        return Redirect::route('admin');
     }
 
     /**

@@ -9,12 +9,7 @@ class AdminController
 {
     public function index()
     {
-        $experiences = Experience::all(["id", "title", "order"])->sort(function($first, $second) {
-            if ($first->order == $second->order) {
-                return 0;
-            }
-            return ($first->order > $second->order) ? 1 : -1;
-        });
+        $experiences = Experience::orderBy('order')->get();
 
         return view('pages.admin', [
             'experiences' => $experiences

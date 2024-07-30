@@ -11,7 +11,7 @@
                     <ol class="text-sky-100 underline mb-4">
                         @foreach($experiences as $experience)
                             <li>
-                                {{ $experience->order . '. ' . $experience->title }}
+                                <a href="{{ route('experiences.edit', $experience['id']) }}">{{ $experience->order . '. ' . $experience->title }}</a>
                             </li>
                         @endforeach
                     </ol>
