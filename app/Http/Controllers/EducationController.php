@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class EducationController
 {
+    public function create()
+    {
+        return view('pages.create-education');
+    }
     public function store(StoreEducationRequest $request)
     {
         $validated = $request->validated();

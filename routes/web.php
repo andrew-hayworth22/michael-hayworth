@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource("experiences", ExperienceController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
-    Route::resource('educations', EducationController::class)->only(['store']);
+    Route::resource('educations', EducationController::class)->only(['create', 'store']);
 });
 
 require __DIR__.'/auth.php';
