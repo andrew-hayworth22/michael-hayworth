@@ -12,7 +12,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Tests\Feature\Controller;
 
-class NewPasswordController extends Controller
+class NewPasswordController
 {
     /**
      * Display the password reset view.

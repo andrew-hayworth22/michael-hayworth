@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Tests\Feature\Controller;
 
-class PasswordController extends Controller
+class PasswordController
 {
     /**
      * Update the user's password.

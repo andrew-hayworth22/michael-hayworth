@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\View\View;
 use Tests\Feature\Controller;
 
-class PasswordResetLinkController extends Controller
+class PasswordResetLinkController
 {
     /**
      * Display the password reset link request view.
