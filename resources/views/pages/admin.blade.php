@@ -15,6 +15,29 @@
                 <x-card>
                     <header>
                         <h2 class="text-lg font-medium text-white">
+                            {{ __('Resume') }}
+                        </h2>
+
+                        <p class="mt-1 text-sm text-slate-300">
+                            {{ __("Upload your resume") }}
+                        </p>
+                    </header>
+                    <form method="post" action="{{ route('resume.upload') }}" enctype="multipart/form-data" class="mt-6">
+                        @csrf
+
+                        <div>
+                            <x-input-label for="file" :value="__('Resume File')" />
+                            <input id="file" class="mt-1" type="file" name="file" required/>
+                            <x-input-error :messages="$errors->get('file')" class="mt-2" />
+                        </div>
+
+                        <x-primary-button class="mt-4">Upload</x-primary-button>
+                    </form>
+
+                </x-card>
+                <x-card>
+                    <header>
+                        <h2 class="text-lg font-medium text-white">
                             {{ __('Experience') }}
                         </h2>
 
