@@ -1,13 +1,15 @@
 @props([
-    'experiences'
+    'experiences',
+    'educations'
 ])
 
 <x-app-layout>
     @include("partials.header")
 
-    <div class="mx-auto w-11/12 sm:w-3/4 md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-7xl mb-24">
+    <div class="flex flex-col gap-28 sm:gap-32 mx-auto w-11/12 sm:w-3/4 md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-7xl mb-24">
         @include("partials.links")
         @include("partials.experience", [$experiences])
+        @include("partials.education", [$educations])
     </div>
 
     <footer class="w-full bg-sky-400 text-slate-900 p-6 text-center">

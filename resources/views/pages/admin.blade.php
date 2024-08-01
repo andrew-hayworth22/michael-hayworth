@@ -12,15 +12,21 @@
                         @foreach($experiences as $experience)
                             <li>
                                 <a href="{{ route('experiences.edit', $experience['id']) }}">{{ $experience->order . '. ' . $experience->title }}</a>
-                                <form action="{{ route('experiences.destroy', $experience['id']) }}" method="post" class="inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" value="Delete"/>
-                                </form>
                             </li>
                         @endforeach
                     </ol>
                     <a href="{{ route('experiences.create') }}" class="text-sky-100 underline">Create Experience</a>
+                </div>
+                <div class="p-6 text-gray-900">
+                    <h2 class="text-2xl font-bold tracking-tight text-sky-500 sm:text-4xl mb-2">Education</h2>
+                    <ol class="text-sky-100 underline mb-4">
+                        @foreach($educations as $education)
+                            <li>
+                                <a href="{{ route('educations.edit', $education['id']) }}">{{ $education->order . '. ' . $education->degree }}</a>
+                            </li>
+                        @endforeach
+                    </ol>
+                    <a href="{{ route('educations.create') }}" class="text-sky-100 underline">Create Education</a>
                 </div>
             </div>
         </div>

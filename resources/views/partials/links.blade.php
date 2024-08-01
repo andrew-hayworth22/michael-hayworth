@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 grid-rows-3 sm:grid-rows-2 gap-x-2 mb-28 sm:mb-32">
+<div class="grid grid-cols-4 grid-rows-3 sm:grid-rows-2 gap-x-2">
     <div class="col-span-4">
         <a href="/MichaelHayworth_Resume.pdf" target="_blank" class="block text-center w-full bg-sky-700 hover:bg-sky-500 focus:bg-sky-500 transition-colors duration-500 text-white font-bold px-6 py-3 rounded-lg"> Resume <i class="fa-solid fa-download"></i></a>
     </div>

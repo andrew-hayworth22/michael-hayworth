@@ -25,7 +25,7 @@ class EducationFactory extends Factory
             "type" => "Full-Time",
             "time_frame" => fake()->monthName . ' ' . fake()->year . " - " . fake()->monthName . ' ' . fake()->year,
             "bullet_points" => fake()->paragraphs(3, true),
-            "tags" => fake()->text(500),
+            "tags" => fake()->word . ',' . fake()->word . ',' . fake()->word
         ];
     }
 }

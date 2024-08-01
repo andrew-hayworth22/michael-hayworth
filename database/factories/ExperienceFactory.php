@@ -18,14 +18,14 @@ class ExperienceFactory extends Factory
     {
         return [
             "order" => fake()->numberBetween(0, 5),
-            "title" => fake()->title,
+            "title" => fake()->jobTitle,
             "company" => fake()->company,
             "company_url" => fake()->url,
             "location" => fake()->city . ', ' . fake()->word(),
             "type" => "Full-Time",
             "time_frame" => fake()->monthName . ' ' . fake()->year . " - " . fake()->monthName . ' ' . fake()->year,
             "bullet_points" => fake()->paragraphs(3, true),
-            "tags" => fake()->text(500),
+            "tags" => fake()->word . ',' . fake()->word . ',' . fake()->word
         ];
     }
 }
