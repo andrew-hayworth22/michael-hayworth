@@ -1,11 +1,11 @@
 <x-app-layout>
     <div>
-        <form class="flex flex-col gap-4 max-w-2xl mx-auto" method="post" action="{{ route("educations.store") }}">
+        <form class="flex flex-col gap-4 max-w-2xl mx-auto p-4 sm:p-8 bg-slate-700 shadow sm:rounded-lg mt-6" method="post" action="{{ route("educations.store") }}">
             @csrf
 
             <div>
                 <x-input-label for="degree" :value="__('Degree')" />
-                <x-text-input id="Degree" class="block mt-1 w-full" type="degree" name="degree" :value="old('degree')" max="150" required autofocus />
+                <x-text-input id="Degree" class="block mt-1 w-full" type="text" name="degree" :value="old('degree')" max="150" required autofocus />
                 <x-input-error :messages="$errors->get('degree')" class="mt-2" />
             </div>
 

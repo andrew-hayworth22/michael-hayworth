@@ -3,8 +3,8 @@
 ])
 <x-app-layout>
     <div>
-        <div class="max-w-2xl mx-auto">
-            <form class="flex flex-col gap-4" method="post" action="{{ route("experiences.update", $experience["id"]) }}">
+        <div class="max-w-2xl mx-auto mt-6">
+            <form class="flex flex-col gap-4 p-4 sm:p-8 bg-slate-700 shadow sm:rounded-lg" method="post" action="{{ route("experiences.update", $experience["id"]) }}">
                 @csrf
                 @method('PUT')
 

@@ -4,7 +4,13 @@
 <x-app-layout xmlns="http://www.w3.org/1999/html">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-2">Administration</h1>
+            <div class="flex justify-between">
+                <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-2">Administration</h1>
+                <div class="flex gap-2">
+                    <a href="{{ route('home') }}" class="underline">Back to Site</a>
+                    <a href="{{ route('profile.edit') }}" class="underline">Profile</a>
+                </div>
+            </div>
             <div class="bg-slate-700 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h2 class="text-2xl font-bold tracking-tight text-sky-500 sm:text-4xl mb-2">Experience</h2>

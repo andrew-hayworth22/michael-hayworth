@@ -17,7 +17,7 @@ class EducationFactory extends Factory
     public function definition(): array
     {
         return [
-            "order" => fake()->numberBetween(0, 5),
+            "order" => fake()->numberBetween(1, 5),
             "degree" => fake()->title,
             "school" => fake()->company,
             "school_url" => fake()->url,
