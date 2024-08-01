@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Tests\Feature\Controller;
 
-class ProfileController extends Controller
+class ProfileController
 {
     /**
      * Display the user's profile form.
