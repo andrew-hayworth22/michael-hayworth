@@ -1,6 +1,6 @@
 <div class="grid grid-cols-4 grid-rows-3 sm:grid-rows-2 gap-x-2">
     <div class="col-span-4">
-        <a href="/MichaelHayworth_Resume.pdf" target="_blank" class="block text-center w-full bg-sky-700 hover:bg-sky-500 focus:bg-sky-500 transition-colors duration-500 text-white font-bold px-6 py-3 rounded-lg"> Resume <i class="fa-solid fa-download"></i></a>
+        <a href="{{ asset("storage/MichaelHayworth_Resume.pdf") }}" target="_blank" class="block text-center w-full bg-sky-700 hover:bg-sky-500 focus:bg-sky-500 transition-colors duration-500 text-white font-bold px-6 py-3 rounded-lg"> Resume <i class="fa-solid fa-download"></i></a>
     </div>
     <a href="https://www.linkedin.com/in/michael-hayworth-71a1791a1/" target="_blank" aria-label="LinkedIn Profile"
        class="flex items-center justify-center text-white hover:text-sky-100 focus:text-sky-100 hover:bg-sky-700 focus:bg-sky-700 col-span-2 sm:col-span-1 rounded-lg transition-colors duration-500 h-24">
