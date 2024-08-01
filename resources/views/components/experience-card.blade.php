@@ -3,7 +3,7 @@
 ])
 
 <li>
-    <x-card>
+    <x-resume-card>
         <x-slot:left>
             {{ $experience["time_frame"] }}
         </x-slot:left>
@@ -28,5 +28,5 @@
                 @endforeach
             </ul>
         </x-slot:body>
-    </x-card>
+    </x-resume-card>
 </li>
